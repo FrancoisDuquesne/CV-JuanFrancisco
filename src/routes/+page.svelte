@@ -17,12 +17,12 @@
 	let showSkills = true;
 </script>
 
-<div class="m-auto items-center md:max-w-7xl p-4 md:p-10">
+<div class="m-auto items-center lg:max-w-7xl p-4 lg:p-10">
 	<div
-		class="flex flex-col md:flex-row relative items-start gap-12 md:gap-4 w-full md:divide-x divide-stone-300"
+		class="flex flex-col lg:flex-row relative items-start gap-12 lg:gap-4 w-full lg:divide-x divide-stone-300"
 	>
 		<section
-			class="w-full md:max-w-sm md:w-fit md:fixed md:-translate-x-full md:pr-4 shrink-0 flex flex-col gap-4 rounded-md bg-stone-100 md:bg-transparent p-4"
+			class="w-full lg:max-w-sm lg:w-fit lg:fixed lg:-translate-x-full lg:pr-4 shrink-0 flex flex-col gap-4 rounded-md bg-stone-100 lg:bg-transparent p-4"
 		>
 			<div class="w-full">
 				<img
@@ -46,7 +46,7 @@
 			</div>
 		</section>
 
-		<div class="flex flex-col gap-8 w-full md:pl-4">
+		<div class="flex flex-col gap-8 w-full lg:pl-4">
 			<section>
 				<button
 					on:click={() => (showExperience = !showExperience)}
@@ -64,14 +64,12 @@
 						{#each experience as job}
 							<li>
 								<img src={job.img} alt={job.company} class="w-20 h-20 rounded-lg" />
-								<div class="w-full space-y-3">
-									<div class="flex flex-col md:flex-row items-end justify-between gap-2 border-b">
-										<div>
-											<h2>{job.title}</h2>
-											<p class="text-lg font-bold text-stone-500">
-												<span class="italic text-stone-400 mr-2">at</span>{job.company}
-											</p>
-										</div>
+								<div class="w-full">
+									<h2>{job.title}</h2>
+									<div class="flex mb-3 flex-col lg:flex-row justify-between gap-2 border-b">
+										<p class="text-lg font-bold text-stone-500">
+											<span class="italic text-stone-400 mr-2">at</span>{job.company}
+										</p>
 										<p class="italic text-stone-500 shrink-0">{job.duration}</p>
 									</div>
 									<p>{job.description}</p>
@@ -101,19 +99,21 @@
 							<li>
 								<img src={school.img} alt={school.title} class="w-20 h-20 rounded-lg" />
 								<div class="w-full space-y-3">
-									<div class="flex flex-col md:flex-row items-end justify-between gap-2 border-b">
-										<div>
-											<h2>{school.subtitle}</h2>
-											{#if school.grade}
+									<div>
+										<h2>{school.subtitle}</h2>
+										<div class="flex flex-col lg:flex-row justify-between gap-2 border-b">
+											<div>
 												<p class="text-lg font-bold text-stone-500">
-													<span class="italic text-stone-400 mr-2">with</span>{school.grade}
+													<span class="italic text-stone-400 mr-2">at</span>{school.title}
 												</p>
-											{/if}
-											<p class="text-lg font-bold text-stone-500">
-												<span class="italic text-stone-400 mr-2">at</span>{school.title}
-											</p>
+												{#if school.grade}
+													<p class="text-lg font-bold text-stone-500">
+														<span class="italic text-stone-400 mr-2">with</span>{school.grade}
+													</p>
+												{/if}
+											</div>
+											<p class="italic text-stone-500 shrink-0">{school.duration}</p>
 										</div>
-										<p class="italic text-stone-500 shrink-0">{school.duration}</p>
 									</div>
 									<p>{school.skills}</p>
 								</div>
