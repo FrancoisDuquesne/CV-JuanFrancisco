@@ -17,34 +17,36 @@
 	let showSkills = true;
 </script>
 
-<div class="m-auto items-center md:max-w-7xl p-10">
-	<div class="flex relative items-start gap-4 w-full divide-x divide-stone-300">
-		<div class="fixed -translate-x-full pr-4 shrink-0">
-			<section class="flex flex-col gap-4 rounded-md">
+<div class="m-auto items-center md:max-w-7xl p-4 md:p-10">
+	<div
+		class="flex flex-col md:flex-row relative items-start gap-12 md:gap-4 w-full md:divide-x divide-stone-300"
+	>
+		<section
+			class="w-full md:max-w-sm md:w-fit md:fixed md:-translate-x-full md:pr-4 shrink-0 flex flex-col gap-4 rounded-md bg-stone-100 md:bg-transparent p-4"
+		>
+			<div class="w-full">
 				<img
 					src="profile-img.jpeg"
 					alt="Profile Picture"
-					class="w-52 h-52 rounded-lg"
+					class="w-52 h-52 rounded-lg m-auto"
 					aria-hidden="true"
 				/>
-				<h1>{info.name} <br /> {info.surname}</h1>
+			</div>
+			<h1>{info.name} <br /> {info.surname}</h1>
 
-				<div class="flex flex-col gap-2">
-					<p>
-						<span class="text-stone-500">mail:</span>
-						<a href="mailto:{info.email}">{info.email}</a>
-					</p>
-					<p><span class="text-stone-500">tel:</span> {info.phone}</p>
-					{#if info.linkedin}
-						<a href={info.linkedin} target="_blank" rel="noopener noreferrer"
-							><Linkedin class="h-8 w-8" />
-						</a>
-					{/if}
-				</div>
-			</section>
-		</div>
+			<div class="flex flex-col gap-2">
+				<p>
+					<span class="text-stone-500">mail:</span>
+					<a href="mailto:{info.email}">{info.email}</a>
+				</p>
+				<p><span class="text-stone-500">tel:</span> {info.phone}</p>
+				<a href={info.linkedin} target="_blank" rel="noopener noreferrer" class="w-fit"
+					><Linkedin class="h-10 w-10" />
+				</a>
+			</div>
+		</section>
 
-		<div class="flex flex-col gap-8 w-full pl-4">
+		<div class="flex flex-col gap-8 w-full md:pl-4">
 			<section>
 				<button
 					on:click={() => (showExperience = !showExperience)}
@@ -63,7 +65,7 @@
 							<li>
 								<img src={job.img} alt={job.company} class="w-20 h-20 rounded-lg" />
 								<div class="w-full space-y-3">
-									<div class="flex items-end justify-between gap-2 border-b">
+									<div class="flex flex-col md:flex-row items-end justify-between gap-2 border-b">
 										<div>
 											<h2>{job.title}</h2>
 											<p class="text-lg font-bold text-stone-500">
@@ -99,7 +101,7 @@
 							<li>
 								<img src={school.img} alt={school.title} class="w-20 h-20 rounded-lg" />
 								<div class="w-full space-y-3">
-									<div class="flex items-end justify-between gap-2 border-b">
+									<div class="flex flex-col md:flex-row items-end justify-between gap-2 border-b">
 										<div>
 											<h2>{school.subtitle}</h2>
 											{#if school.grade}
