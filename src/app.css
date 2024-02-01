@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.card {
+    @apply bg-white shadow-md rounded-lg p-4 border;
+}
+.list {
+    @apply ml-2 space-y-4;
+}
+
+.list > li {
+    @apply rounded-md p-3 bg-stone-50 flex items-start gap-4;
+}
+
+.list > li:hover {
+    @apply bg-stone-100;
+}
+
+h1 {
+    @apply text-3xl font-semibold mb-2;
+}
+h2 {
+    @apply text-xl font-semibold mb-1;
+}
+h3 {
+    @apply text-lg font-semibold;
+}
+
+a {
+    @apply text-blue-500 hover:text-blue-600 hover:underline;
+}
