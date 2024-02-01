@@ -16,7 +16,7 @@ const config = {
 			fallback: undefined,
 		}),
 		paths: {
-			base: '/CV-JuanFrancisco'
+			base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
 		}
 	}
 };
