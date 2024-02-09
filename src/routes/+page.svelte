@@ -15,7 +15,7 @@
 		github: 'https://github.com/juan15-fran'
 	};
 
-	let languages = ['Spanish (native)', 'English (fluent)', 'French (fluent)'];
+	let languages = ['Spanish (native)', 'English (fluent)', 'French (fluent)', 'hola'  ];
 
 	let showExperience = true;
 	let showEducation = true;
